@@ -1,0 +1,58 @@
+﻿@*@model DieticianWebSite.Models.Yazilar
+    @{
+        ViewData["Title"] = "Create";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        // Layout = null;
+    }
+    <h2>Tarif Sayfası</h2>
+    <form method="post" asp-controller="Yazilars" asp-action="AddTarif" enctype="multipart/form-data">
+        <div class="form-group has-success has-feedback" style="">
+            <label asp-for="Adi" class="control-label col-md-4 font-weight-bold"></label>
+            <input asp-for="Adi" class="form-control" />
+            <span asp-validation-for="Adi" class="text-danger"></span>
+            <br />
+            <br>
+            <label asp-for="Icindekiler" class="control-label"></label>
+            <textarea asp-for="Icindekiler" class="form-control" cols="70" rows="5" style="resize: none;"></textarea>
+            <span asp-validation-for="Icindekiler" class="text-danger"></span>
+            <br />
+            <br />
+            <label asp-for="Aciklama" class="control-label"></label>
+            <textarea asp-for="Aciklama" class="form-control" cols="70" rows="5" style="resize: none;"></textarea>
+            <span asp-validation-for="Aciklama" class="text-danger"></span>
+            <br />
+            <br />
+            <label asp-for="Resim" class="control-label col-md-4 font-weight-bold"></label>
+            <input type="file" name="resim" class="form-control" />
+            <span asp-validation-for="Resim" class="text-danger"></span>
+            <br />
+            <input type="submit" value="~Tarifi Ekle~" class="btn btn-success" />
+        </div>
+    </form>*@
+
+@model DieticianWebSite.Models.Yazilar
+@{
+    ViewData["Title"] = "AddTarif";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Layout = null;
+}
+<h2>Tarif Sayfası</h2>
+<form method="post" asp-controller="Yazilars" asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group has-success has-feedback" style="">
+        <label asp-for="Adi" class="control-label col-md-4 font-weight-bold"></label>
+        <input asp-for="Adi" class="form-control" />
+        <span asp-validation-for="Adi" class="text-danger"></span>
+        <br />
+        <br>
+        <label asp-for="Icerik" class="control-label"></label>
+        <textarea asp-for="Icerik" class="form-control" cols="70" rows="5" style="resize: none;"></textarea>
+        <span asp-validation-for="Icerik" class="text-danger"></span>
+        <br />
+        <br />
+        <label asp-for="Resim" class="control-label col-md-4 font-weight-bold"></label>
+        <input type="file" name="resim" class="form-control" />
+        <span asp-validation-for="Resim" class="text-danger"></span>
+        <br />
+        <input type="submit" value="~Tarifi Ekle~" class="btn btn-success" />
+    </div>
+</form>

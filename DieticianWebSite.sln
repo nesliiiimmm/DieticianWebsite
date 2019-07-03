@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DieticianWebSite", "DieticianWebSite\DieticianWebSite.csproj", "{EB4BEBBE-5635-4E1C-A8FC-521F14088CB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB4BEBBE-5635-4E1C-A8FC-521F14088CB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB4BEBBE-5635-4E1C-A8FC-521F14088CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB4BEBBE-5635-4E1C-A8FC-521F14088CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB4BEBBE-5635-4E1C-A8FC-521F14088CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1926165-ED28-4D96-8DEB-671B7824A603}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/dieticianwebsite
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DieticianWebSite\\DieticianWebSite.csproj
+		SccProjectName1 = DieticianWebSite
+		SccLocalPath1 = DieticianWebSite
+	EndGlobalSection
+EndGlobal

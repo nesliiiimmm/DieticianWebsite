@@ -1,0 +1,92 @@
+﻿@*@model Tarifler*@
+@model ViewModel
+@{
+    //Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@Html.DisplayFor(modelItem => Model.Tarif.Adi)</h2>
+<br />
+<hr />
+@Html.DisplayFor(modelItem => Model.Tarif.Icindekiler)
+<br />
+<hr />
+@Html.DisplayFor(modelItem => Model.Tarif.Aciklama)
+<br />
+<hr />
+@Html.DisplayFor(modelItem => Model.Tarif.Resim)
+<hr />
+<br />
+<h5>Yayın tarihi:@Html.DisplayFor(modelItem => Model.Tarif.Tarih)</h5>
+<br />
+<hr />
+@{DieticianWebSiteContext db = new DieticianWebSiteContext();
+    var ess = db.Yorum.ToList(); }
+<table>
+    @{
+
+        if (ess != null)
+        {
+            foreach (var yemekyorum in ess)
+            {
+                if (yemekyorum.Yyb == 1)
+                {
+                    //if (Model.Tarif.Id == yemekyorum.Id)
+                    //{
+                        <tr>
+                            <th>@yemekyorum.KullaniciAdi</th>
+                        </tr>
+                        <tr>
+                            <th>@yemekyorum.Icerik</th>
+                        </tr>
+                        //}
+
+                    }
+
+                }
+
+            }
+    }
+    @*@Html.Partial("_Comment")*@
+
+</table>
+@{   <div class="contact-form-area mb-70">
+        <h4 class="mb-50">Yorum Eklemek ister misiniz?</h4>
+        <form asp-action="commentYap" asp-controller="Tarifler" method="post">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label asp-for="Yorum.KullaniciMail" class="control-label col-md-4 font-weight-bold"></label>
+                        <input asp-for="Yorum.KullaniciMail" class="form-control" />
+                        <span asp-validation-for="Yorum.KullaniciMail" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label asp-for="Yorum.KullaniciAdi" class="control-label col-md-4 font-weight-bold"></label>
+                        <input asp-for="Yorum.KullaniciAdi" class="form-control" />
+                        <span asp-validation-for="Yorum.KullaniciAdi" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label asp-for="Yorum.Icerik" class="control-label col-md-4 font-weight-bold"></label>
+                        <textarea asp-for="Yorum.Icerik" class="form-control" cols="30" rows="10" placeholder="Yorum yazınız..."></textarea>
+                        <span asp-validation-for="Yorum.Icerik" class="text-danger"></span>
+                    </div>
+                    <div>                  
+                                      
+                       <input asp-for="Yorum.YorumId"  type="text" value="@Model.Tarif.Id" style="visibility:hidden" />
+
+                        <input asp-for="Yorum.Yyb" type="text" value="1" style="visibility:hidden" />
+                    
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn bueno-btn mt-30" type="submit">Yorum Yap</button>
+                </div>
+            </div>
+        </form>
+    </div>
+}
+
+

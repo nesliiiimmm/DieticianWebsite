@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DieticianWebSite.Models.Yazilar>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Layout = null;
+}
+
+<h2>Öneriler</h2>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Adi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Icerik)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Tarih)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Icerik)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Resim)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tarih)
+                    </td>
+                    
+
+                    <td>
+                        <a asp-action="Edit" asp-controller="Yazilars" asp-route-id="@item.Id" style="color:cornflowerblue">Düzenle</a> |
+                        <a asp-action="Details" asp-controller="Yazilars" asp-route-id="@item.Id" style="color:coral">Detaylar</a>|
+                        <a asp-action="Delete" asp-controller="Yazilars" asp-route-id="@item.Id" style="color:orangered">Sil</a>
+
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @Html.Partial("_Search")
+
+<a asp-action="Index" asp-controller="Home">Geri</a>

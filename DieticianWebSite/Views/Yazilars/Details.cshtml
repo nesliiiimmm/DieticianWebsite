@@ -1,0 +1,36 @@
+﻿@model DieticianWebSite.Models.Yazilar
+@{
+    ViewData["Title"] = "Details";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Layout = null;
+}
+
+<h2>Detaylar</h2>
+<hr />
+
+<div style="width:800px; margin:0 auto;">
+
+
+    <dl class="dl-horizontal">
+        <dd>
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Adi)
+        </dd>
+        <dd>
+            <img src="~/Yazilar/" />
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+
+    </dl>
+
+</div>
+
+<div>
+
+    <a asp-action="Index">Geri</a>
+</div>

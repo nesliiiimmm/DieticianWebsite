@@ -1,0 +1,87 @@
+﻿@*@model DieticianWebSite.Models.Yazilar
+
+    @{
+        ViewData["Title"] = "Edit";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        // Layout = null;
+    }
+
+    <h2>Düzenle</h2>
+
+    <h4>Yazilar</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Adi" class="control-label"></label>
+                    <input asp-for="Adi" class="form-control" />
+                    <span asp-validation-for="Adi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Icerik" class="control-label"></label>
+                    <textarea asp-for="Icerik" class="form-control" cols="30" rows="10"></textarea>
+                    <span asp-validation-for="Icerik" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Resim" class="control-label"></label>
+                    <input asp-for="Resim" class="form-control" />
+                    <span asp-validation-for="Resim" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" value="Kaydet" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index" asp-controller="Yazilars"> Listeye Geri Dön</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
+
+@model DieticianWebSite.Models.Yazilar
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Layout = null;
+}
+
+<h2>Tupdate</h2>
+
+<h4>Tarifler</h4>
+<hr />
+<div class="row">
+    
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Adi" class="control-label"></label>
+                <input asp-for="Adi" class="form-control" />
+                <span asp-validation-for="Adi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Icerik" class="control-label"></label>
+                <textarea asp-for="Icerik" class="form-control" cols="70" rows="5" style="resize: none;"></textarea>
+                <span asp-validation-for="Icerik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+   
+</div>
+
+<div>
+    <a asp-action="Tdetails">Back to List</a>
+</div>
+

@@ -1,0 +1,92 @@
+﻿   @model ViewModel
+<div class="contact-form-area mb-70">
+    <h4 class="mb-50">Yorum Eklemek ister misiniz?</h4>
+    <form asp-action="commentYap" asp-controller="Tarifler" method="post">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+
+                    <label asp-for="Yorum.KullaniciMail" class="control-label col-md-4 font-weight-bold"></label>
+                    <input asp-for="Yorum.KullaniciMail" class="form-control" />
+                    <span asp-validation-for="Yorum.KullaniciMail" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+
+                    <label asp-for="Yorum.KullaniciAdi" class="control-label col-md-4 font-weight-bold"></label>
+                    <input asp-for="Yorum.KullaniciAdi" class="form-control" />
+                    <span asp-validation-for="Yorum.KullaniciAdi" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label asp-for="Yorum.Icerik" class="control-label col-md-4 font-weight-bold"></label>
+                    <textarea asp-for="Yorum.Icerik" class="form-control" cols="30" rows="10" placeholder="Yorum yazınız..."></textarea>
+                    <span asp-validation-for="Yorum.Icerik" class="text-danger"></span>
+
+                </div>
+                <div>
+                    
+                       
+                            
+                    @*int id=YorumId;*@
+                     
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn bueno-btn mt-30" type="submit">Yorum Yap</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+@*
+    
+     <!-- Contact Form Area -->
+<div class="contact-form-area mb-70">
+    <h4 class="mb-50">Yorum Eklemek ister misiniz?</h4>
+
+    <form action="commentYap"  method="post">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" placeholder="İsim">
+
+                    <label asp-for="KullaniciMail" class="control-label col-md-4 font-weight-bold"></label>
+                    <input asp-for="KullaniciMail" class="form-control" />
+                    <span asp-validation-for="KullaniciMail" class="text-danger"></span>
+
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                   
+                    <label asp-for="KullaniciAdi" class="control-label col-md-4 font-weight-bold"></label>
+                    <input asp-for="KullaniciAdi" class="form-control" />
+                    <span asp-validation-for="KullaniciAdi" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    
+                    <label asp-for="Icerik" class="control-label col-md-4 font-weight-bold"></label>
+                    <textarea asp-for="Icerik" class="form-control" cols="30" rows="10" placeholder="Yorum yazınız..."></textarea>
+                    <span asp-validation-for="Icerik" class="text-danger"></span>
+                    
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn bueno-btn mt-30" type="submit">Yorum Yap</button>
+            </div>
+        </div>
+    </form>
+</div>
+*@

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DieticianWebSite.Models.Tarifler>
+@*@model DieticianWebSite.Models.ViewModel*@
+@{
+    //Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "YEMEK TARİFLERİ";
+}
+
+<h2>YEMEK TARİFLERİ</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Adi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Icindekiler)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Aciklama)
+                    </th>*@
+
+                <th>@Html.DisplayNameFor(model => model.Resim)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Icindekiler)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Aciklama)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Resim)
+                    </td>
+                    <td>
+                        <a asp-action="TarifSil" asp-controller="Tarifler" asp-route-id="@item.Id">Sil</a>
+                        <a asp-action="TarifGüncelle" asp-controller="Tarifler" asp-route-id="@item.Id">Güncelle</a>
+                        <a asp-action="TarifDetay" asp-controller="Tarifler" asp-route-id="@item.Id">Detay</a>
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+  @Html.Partial("_Search")
+
+@*@Html.Partial("_Comment")*@

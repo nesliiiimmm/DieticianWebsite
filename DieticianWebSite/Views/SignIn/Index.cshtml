@@ -1,0 +1,143 @@
+﻿@model DieticianWebSite.Models.Uye
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<center><h4>Uye olunuz</h4></center>
+@*<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="text-align:center"></div>
+            
+            <div class="form-group"style="text-align:center">
+                <label asp-for="Adi" class="control-label"></label>
+                <input asp-for="Adi" class="form-control" />
+                <span asp-validation-for="Adi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Soyadi" class="control-label"></label>
+                <input asp-for="Soyadi" class="form-control" style="text-align:center" />
+                <span asp-validation-for="Soyadi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cinsiyet" class="control-label"></label>
+                <input asp-for="Cinsiyet" class="form-control" />
+                <span asp-validation-for="Cinsiyet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DogumTarihi" class="control-label"></label>
+                <input asp-for="DogumTarihi" class="form-control" />
+                <span asp-validation-for="DogumTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eposta" class="control-label"></label>
+                <input asp-for="Eposta" class="form-control" />
+                <span asp-validation-for="Eposta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boy" class="control-label"></label>
+                <input asp-for="Boy" class="form-control" />
+                <span asp-validation-for="Boy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kilo" class="control-label"></label>
+                <input asp-for="Kilo" class="form-control" />
+                <span asp-validation-for="Kilo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+<form name="my-form" method="post">
+    <div class="form-group row">
+        <label for="full_name" class="col-md-4 col-form-label text-md-right">İsim</label>
+        <div class="col-md-6">
+            <input type="text" id="full_name" class="form-control" name="Adi">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="full_name" class="col-md-4 col-form-label text-md-right">Soyisim</label>
+        <div class="col-md-6">
+            <input type="text" id="full_name" class="form-control" name="Soyadi">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Adresi</label>
+        <div class="col-md-6">
+            <input type="text" id="email_address" class="form-control" name="email">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="user_name" class="col-md-4 col-form-label text-md-right">Kullanıcı Adı</label>
+        <div class="col-md-6">
+            <input type="text" id="user_name" class="form-control" name="username">
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <label for="present_address" class="col-md-4 col-form-label text-md-right">Parola</label>
+        <div class="col-md-6">
+            <input type="password" id="present_address" class="form-control" name="Parola">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Parola Tekrar</label>
+        <div class="col-md-6">
+            <input type="password" id="permanent_address" class="form-control" name="ParolaTekrar">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="nid_number" class="col-md-4 col-form-label text-md-right">Cinsiyet</label>
+        <div class="col-md-6">
+            <input type="radio" id="nid_number" name="CinsiyetKız">Kız
+            <input type="radio" id="nid_number"  name="CinsiyetErkek">Erkek
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="nid_number" class="col-md-4 col-form-label text-md-right">Doğum Tarihi</label>
+        <div class="col-md-6">
+            <input type="date" id="nid_number" class="form-control" name="DogumTarihi">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="nid_number" class="col-md-4 col-form-label text-md-right">Kilo</label>
+        <div class="col-md-6">
+            <input type="number" id="nid_number" class="form-control" name="Kilo">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="nid_number" class="col-md-4 col-form-label text-md-right">Boy </label>
+        <div class="col-md-6">
+            <input type="number" id="nid_number" class="form-control" name="Boy">
+        </div>
+    </div>
+
+    <div class="col-md-6 offset-md-4">
+        <button type="submit" class="btn btn-primary" name="submitButton" value="Kayit">
+            Kayıt
+        </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary" name="submitButton" value="Danisman">
+            Online Diyet için devam et
+        </button>
+    </div>
+</form>
